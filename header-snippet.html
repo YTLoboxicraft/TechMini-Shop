@@ -1,0 +1,97 @@
+<!-- Header HTML (usa este bloque en index.html y product.html) -->
+<header>
+    <button class="mode-toggle" id="modeToggle" title="Toggle dark/light mode">🌙/☀️</button>
+    <a href="index.html" style="color:#fff;text-decoration:none;"><h1>🛍️ TechMini Shop</h1></a>
+    <div class="cart-icon" id="cartIcon">
+        🛒 <span id="cartCount">0</span>
+    </div>
+    <div class="profile-pic" id="profilePic" title="Your profile">
+        <img src="profile-default.png" alt="Profile" />
+    </div>
+</header>
+
+<!-- CSS (ponlo en tu styles.css o en un <style> en el <head>) -->
+<style>
+header {
+    position: relative;
+    background: #222;
+    color: #fff;
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-pic {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #0074d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 1100;
+}
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.cart-icon {
+    position: absolute;
+    top: 20px;
+    right: 80px; /* Separado de la foto de perfil */
+    cursor: pointer;
+    font-size: 1.5em;
+    z-index: 1090;
+}
+#cartCount {
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 0.9em;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+.mode-toggle {
+    position: absolute;
+    left: 24px;
+    top: 16px;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 40px;
+        height: 40px;
+        top: 8px;
+        right: 8px;
+    }
+    .cart-icon {
+        top: 12px;
+        right: 60px;
+        font-size: 1.2em;
+    }
+    .mode-toggle {
+        left: 12px;
+        top: 8px;
+        width: 32px;
+        height: 32px;
+        font-size: 1em;
+    }
+}
+</style>

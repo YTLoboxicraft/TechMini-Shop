@@ -1,0 +1,29 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+.carousel-img {
+    width: 260px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #f0f4f8;
+    margin: 0 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.carousel-btn {
+    background: #2d72d9;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.carousel-btn:hover {
+    background: #1a4e8a;
+}

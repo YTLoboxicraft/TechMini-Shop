@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMini Shop</title>
+    <link rel="icon" href="logo.png" type="image/png" data-gatsby-head="true"><link href="./Buy a Raspberry Pi 4 Model B – Raspberry Pi_files/css2" rel="stylesheet" data-gatsby-head="true">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px; /* Espacio entre productos */
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+.product-list .product {
+  
+    
+   
+   
+
+    max-width: 320px;
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+        .profile-pic {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #0074d9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 1100;
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 80px; /* Separated from profile pic */
+            cursor: pointer;
+            font-size: 1.5em;
+            z-index: 1090;
+        }
+        #cartCount {
+            background: #e74c3c;
+            color: #fff;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.9em;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <button class="mode-toggle" id="modeToggle" title="Toggle dark/light mode">🌙/☀️</button>
+                <h1>🛍️ Welcome to TechMini Shop!</h1>
+        <p>We sell small computers and smart devices for your home or school projects.</p>
+        <div class="cart-icon" id="cartIcon">
+            🛒 <span id="cartCount">0</span>
+        </div>
+        <div class="profile-pic" id="profilePic" title="Your profile">
+            <img src="profile-default.png" alt="Profile" />
+        </div>
+    </header>
+    
+    <main>
+        <section class="products">
+            <h2>Our Products</h2>
+            <div class="product-list" id="productList">
+                <!-- Products rendered by JS -->
+            </div>
+        </section>
+        <section class="shipping">
+            <h2>Shipping</h2>
+            <ul>
+                <li>Free for orders over $50</li>
+                <li>Fast delivery in 3-5 days</li>
+            </ul>
+        </section>
+        <section class="contact">
+            <h2>Contact us</h2>
+            <p>📧 Email: <a href="mailto:mat.m.m.9.13424354@gmail.com">mat.m.m.9.13424354@gmail.com</a></p>
+            <p>📦 Website: <a href="https://www.techminishop.com" target="_blank">www.techminishop.com</a></p>
+        </section>
+        <footer>
+            © <span id="year"></span> TechMini Shop
+          </footer>
+          <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+          </script>
+          </footer>
+
+    <!-- Product details modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div id="modalDetails"></div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeCart">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <div id="cartTotal"></div>
+            <div id="paymentMethods" style="margin-top:1rem;">
+                <strong>Accepted payment methods:</strong>
+                <ul>
+                    <li>PayPal</li>
+                    <li>Credit cards</li>
+                    <li>Debit cards</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS: Always at the end of body -->
+    <script src="theme.js"></script>
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
